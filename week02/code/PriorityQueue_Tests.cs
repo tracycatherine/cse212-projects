@@ -9,6 +9,7 @@ public class PriorityQueueTests
     // Scenario: Enqueue three items with different priorities, then dequeue all.
     // Expected Result: Items are dequeued in order of highest to lowest priority.
     // Defect(s) Found: 
+    // - No defects found. Test passes if queue logic is correct.
     public void TestPriorityQueue_DequeueOrder()
     {
         var pq = new PriorityQueue();
