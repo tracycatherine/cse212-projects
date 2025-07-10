@@ -26,7 +26,7 @@ public class PriorityQueue
     public string Dequeue()
     {
         if (items.Count == 0)
-            throw new InvalidOperationException("Queue is empty.");
+            throw new InvalidOperationException("The queue is empty.");
 
         int maxPriority = int.MinValue;
         int index = -1;
@@ -42,5 +42,18 @@ public class PriorityQueue
         string result = items[index].Value;
         items.RemoveAt(index);
         return result;
+    }
+
+    // Override ToString() to show queue contents
+    public override string ToString()
+    {
+        if (items.Count == 0)
+            return "[]";
+        var parts = new List<string>();
+        foreach (var item in items)
+        {
+            parts.Add($"{item.Value}:{item.Priority}");
+        }
+        return "[" + string.Join(", ", parts) + "]";
     }
 }
